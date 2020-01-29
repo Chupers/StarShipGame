@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class DesctopMoveControl : MonoBehaviour
 {
+    private const float RIGHTBORDER = 10f;
+    private const float LEFTBORDER = -10f;
+
     public float speed = 8f;
     // Start is called before the first frame update
     void Start()
