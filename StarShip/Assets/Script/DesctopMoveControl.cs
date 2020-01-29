@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class DesctopMoveControl : MonoBehaviour
 {
-    public float speed = 5f;
+    public float speed = 8f;
     // Start is called before the first frame update
     void Start()
     {
