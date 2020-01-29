@@ -1,56 +1,30 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class MoveControl : MonoBehaviour
 {
-
-    private Touch theTouch;
-    private Vector2 touchStartPosition, touchEndPosition;
-    private string direction;
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
+    public GameObject moveSpaceShip;
+    public bool _isMoving;
+    public float speed = 8f;
     void Update()
     {
-        if (Input.touchCount > 0)
+        if (_isMoving)
         {
-            theTouch = Input.GetTouch(0);
-
-            if (theTouch.phase == TouchPhase.Began)
-            {
-                touchStartPosition = theTouch.position;
-            }
-
-            else if (theTouch.phase == TouchPhase.Moved || theTouch.phase == TouchPhase.Ended)
-            {
-                touchEndPosition = theTouch.position;
-
-                float x = touchEndPosition.x - touchStartPosition.x;
-                float y = touchEndPosition.y - touchStartPosition.y;
-
-                if (Mathf.Abs(x) == 0 && Mathf.Abs(y) == 0)
-                {
-                    direction = "Tapped";
-                }
-
-                else if (Mathf.Abs(x) > Mathf.Abs(y))
-                {
-                    direction = x > 0 ? "Right" : "Left";
-                }
-
-                else
-                {
-                    direction = y > 0 ?  "Up" : "Down";
-                }
-            }
+            float Y = Input.GetAxis("Mouse Y") * speed * Time.deltaTime;
+            float X = Input.GetAxis("Mouse X") * speed * Time.deltaTime;
+            moveSpaceShip.transform.Translate(X, 0, 0);
+            moveSpaceShip.transform.Translate(0, Y, 0);
         }
-
-        
+    }
+    void OnMouseDown()
+    {
+        _isMoving = true;
+        Cursor.visible = false;
+    }
+    void OnMouseUp()
+    {
+        Cursor.visible = true;
+        _isMoving = false;
     }
 }
+

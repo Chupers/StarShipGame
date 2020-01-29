@@ -4,15 +4,14 @@ using UnityEngine;
 
 public class BotAmmoMovement : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
     void Update()
     {
         gameObject.transform.Translate(0,-0.5f,0);
+        Destroy(gameObject, 3f);
+    }
+    void OnTriggerEnter2D(Collider2D collider)
+    {
+        if (collider.tag == "Player")
+            Destroy(gameObject, 0.01f);
     }
 }

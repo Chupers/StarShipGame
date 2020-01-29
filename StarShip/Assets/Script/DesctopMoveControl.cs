@@ -8,13 +8,6 @@ public class DesctopMoveControl : MonoBehaviour
     private const float LEFTBORDER = -10f;
 
     public float speed = 8f;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
     void Update()
     {
         float Y = Input.GetAxis("Vertical") * speed * Time.deltaTime;

@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 2
---- !u!114 &5524379433199168488
+--- !u!114 &1143575200573361236
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -22,11 +22,37 @@ MonoBehaviour:
   m_GameObject: {fileID: 4432961123790293865}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 55205eba98c1a554588f786b21bba143, type: 3}
+  m_Script: {fileID: 11500000, guid: ee14a9b9ea687e642913571ac08b011a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   ammo: {fileID: 9008108213985698741, guid: c0480671cae79ba4986e5ce3e313450d, type: 3}
   reloadSpeed: 2
+--- !u!61 &7279139237309779579
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4432961123790293865}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.49, y: 0.46}
+    newSize: {x: 0.49, y: 0.46}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.49, y: 0.46}
+  m_EdgeRadius: 0
 --- !u!1001 &4431636013790311025
 PrefabInstance:
   m_ObjectHideFlags: 0
