@@ -11,9 +11,9 @@ GameObject:
   - component: {fileID: 6897925518663359360}
   - component: {fileID: 6897925518663359361}
   - component: {fileID: 6897925518663359363}
-  - component: {fileID: 6897925518663359362}
   - component: {fileID: 2124816597849338061}
   - component: {fileID: 2077596356932991539}
+  - component: {fileID: 7288845567328090028}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -105,19 +105,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &6897925518663359362
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6897925518663359486}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 73bd41eaf53b1324dbf0682e2c72d028, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 8
 --- !u!61 &2124816597849338061
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -157,4 +144,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ammo: {fileID: 6498755668236798357, guid: 16a6c62679fac384b937f60d7009bb13, type: 3}
+  scoreColvo: 0
   reloadSpeed: 0.5
+--- !u!114 &7288845567328090028
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6897925518663359486}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9ba4325b1add9b546bc0c08fbe05ed4a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveSpaceShip: {fileID: 0}
+  _isMoving: 0
+  speed: 8

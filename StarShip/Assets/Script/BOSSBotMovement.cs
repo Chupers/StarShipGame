@@ -9,7 +9,6 @@ public class BOSSBotMovement : MonoBehaviour
     private GameObject Player;
     public float speed = 2;
     float targetPost;
-    float HP = 100;
     void Start()
     {
         Player = GameObject.FindGameObjectWithTag("Player");

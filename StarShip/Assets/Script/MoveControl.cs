@@ -3,28 +3,30 @@ using UnityEngine.EventSystems;
 
 public class MoveControl : MonoBehaviour
 {
-    public GameObject moveSpaceShip;
     public bool _isMoving;
     public float speed = 8f;
+    private Vector3 touchPosition;
+    private Vector3 direction;
+    private Rigidbody2D rigidbody;
+    void Start()
+    {
+        rigidbody = GetComponent<Rigidbody2D>();
+    }
     void Update()
     {
-        if (_isMoving)
+        if (Input.touchCount > 0)
         {
-            float Y = Input.GetAxis("Mouse Y") * speed * Time.deltaTime;
-            float X = Input.GetAxis("Mouse X") * speed * Time.deltaTime;
-            moveSpaceShip.transform.Translate(X, 0, 0);
-            moveSpaceShip.transform.Translate(0, Y, 0);
+            Touch touch = Input.GetTouch(0);
+            touchPosition = Camera.main.ScreenToWorldPoint(touch.position);
+            touchPosition.z = 0;
+            direction = (touchPosition - transform.position);
+            rigidbody.velocity = new Vector2(direction.x, direction.y) * speed;
+            if (touch.phase == TouchPhase.Ended)
+                rigidbody.velocity = Vector2.zero;
+            _isMoving = true;
         }
+        else _isMoving = false;
     }
-    void OnMouseDown()
-    {
-        _isMoving = true;
-        Cursor.visible = false;
-    }
-    void OnMouseUp()
-    {
-        Cursor.visible = true;
-        _isMoving = false;
-    }
+   
 }
 

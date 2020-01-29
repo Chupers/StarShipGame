@@ -6,6 +6,10 @@ TagManager:
   tags:
   - Enemy
   - Score
+  - 1hp
+  - 2hp
+  - 3hp
+  - GameOver
   layers:
   - Default
   - TransparentFX

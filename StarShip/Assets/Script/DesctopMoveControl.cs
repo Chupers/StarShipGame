@@ -4,16 +4,28 @@ using UnityEngine;
 
 public class DesctopMoveControl : MonoBehaviour
 {
-    private const float RIGHTBORDER = 10f;
-    private const float LEFTBORDER = -10f;
-
+    public GameObject moveSpaceShip;
+    public bool _isMoving;
     public float speed = 8f;
+
     void Update()
     {
-        float Y = Input.GetAxis("Vertical") * speed * Time.deltaTime;
-        float X = Input.GetAxis("Horizontal") * speed * Time.deltaTime;
-
-        gameObject.transform.Translate(X, 0, 0);
-        gameObject.transform.Translate(0, Y, 0);
+        if (_isMoving)
+        {
+            float Y = Input.GetAxis("Mouse Y") * speed * Time.deltaTime;
+            float X = Input.GetAxis("Mouse X") * speed * Time.deltaTime;
+            moveSpaceShip.transform.Translate(X, 0, 0);
+            moveSpaceShip.transform.Translate(0, Y, 0);
+        }
+    }
+    void OnMouseDown()
+    {
+        _isMoving = true;
+        Cursor.visible = false;
+    }
+    void OnMouseUp()
+    {
+        Cursor.visible = true;
+        _isMoving = false;
     }
 }
